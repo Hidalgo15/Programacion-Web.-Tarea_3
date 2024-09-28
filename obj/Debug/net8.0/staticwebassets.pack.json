@@ -1,0 +1,49 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Programacion web, trabajos\\Tarea_3\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Tarea_3.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Tarea_3.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Programacion web, trabajos\\Tarea_3\\wwwroot\\Imagenes\\Imagen de choque.png",
+      "PackagePath": "staticwebassets\\Imagenes\\Imagen de choque.png"
+    },
+    {
+      "Id": "C:\\Programacion web, trabajos\\Tarea_3\\wwwroot\\Imagenes\\Yo,Brazor.jpg",
+      "PackagePath": "staticwebassets\\Imagenes\\Yo,Brazor.jpg"
+    },
+    {
+      "Id": "C:\\Programacion web, trabajos\\Tarea_3\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Programacion web, trabajos\\Tarea_3\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Programacion web, trabajos\\Tarea_3\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Programacion web, trabajos\\Tarea_3\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Tarea_3.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Tarea_3.props",
+      "PackagePath": "build\\Tarea_3.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Tarea_3.props",
+      "PackagePath": "buildMultiTargeting\\Tarea_3.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Tarea_3.props",
+      "PackagePath": "buildTransitive\\Tarea_3.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

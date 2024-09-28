@@ -1,0 +1,66 @@
+.dashboard[b-737q8lpcob] {
+
+    padding: 20px;
+    background-color: #f4f7f9; /* Color de fondo claro */
+    border-radius: 1px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex; 
+    justify-content: space-between;
+}
+
+.card-container[b-737q8lpcob] {
+    margin-left: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual ancho */
+    gap: 20px;
+    flex-grow: 1;
+  }
+  
+  .card[b-737q8lpcob] {
+    
+    background-color: rgb(254, 254, 254);
+    padding: 3px;
+    font-size: 0.9em;
+    border-radius: 10px;
+    box-shadow: 0 1px 5px rgba(135, 135, 135, 0.129);
+    transition: transform 0.5s;
+    
+
+
+  }
+
+
+
+.card h2[b-737q8lpcob] {
+    margin-left:5px ;
+    margin-top: 5px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.card p[b-737q8lpcob] {
+    
+    font-size: 1.2em;
+    margin-top: 10px;
+    margin-left: 5px;
+    color: #2e77c0; 
+}
+
+
+
+.card:hover[b-737q8lpcob] {
+    transform: scale(1.0025); /* Efecto de hover */
+}
+
+
+.chart-container[b-737q8lpcob] {
+    margin-right:25px ;
+    display: flex; /* Usar flexbox para alinear las gráficas */
+    justify-content: space-between;
+    width: 50%;
+}
+
+#myChart[b-737q8lpcob], #myDoughnutChart[b-737q8lpcob] {
+    width: 500px;  /* Ajusta el ancho aquí */
+    height: 175px; /* Ajusta la altura aquí */
+}

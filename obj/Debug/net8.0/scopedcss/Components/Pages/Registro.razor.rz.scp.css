@@ -1,0 +1,134 @@
+body[b-sn8i44x6lc] {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+h3[b-sn8i44x6lc] {
+    color: #4a4a4a;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+
+form[b-sn8i44x6lc] {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-label[b-sn8i44x6lc] {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+    color: #5a5a5a;
+}
+
+.form-control[b-sn8i44x6lc] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.form-control:focus[b-sn8i44x6lc] {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+
+div[b-sn8i44x6lc] {
+    margin-bottom: 20px;
+}
+
+.table[b-sn8i44x6lc] {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px; /* Espacio entre filas */
+    background-color: white;
+}
+
+.table th[b-sn8i44x6lc], .table td[b-sn8i44x6lc] {
+    padding: 12px 15px;
+    background-color: #f7f7f7; /* Fondo claro */
+    color: #333; /* Texto oscuro */
+    border-bottom: 2px solid #e0e0e0; /* Línea de separación sutil */
+}
+
+.table th[b-sn8i44x6lc] {
+    background-color: #fafafa; /* Fondo muy claro para encabezado */
+    text-align: left;
+    font-weight: bold;
+    color: #666; /* Texto más suave */
+    text-transform: uppercase; /* Mayúsculas para un toque más elegante */
+    font-size: 0.9rem; /* Tamaño de fuente reducido */
+}
+
+.table tbody tr[b-sn8i44x6lc] {
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.table tbody tr:hover[b-sn8i44x6lc] {
+    background-color: #eaf3f3; /* Suave cambio de color al hacer hover */
+    transform: translateY(-2px); /* Elevación ligera */
+}
+
+.btn[b-sn8i44x6lc] {
+    border-radius: 5px; /* Botones redondeados */
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn:hover[b-sn8i44x6lc] {
+    transform: translateY(-2px); /* Elevación ligera al hacer hover */
+}
+
+.btn-primary[b-sn8i44x6lc] {
+    background-color: #00bcd4; /* Azul cian tecnológico */
+    border-color: #00bcd4;
+    color: white;
+}
+
+.btn-primary:hover[b-sn8i44x6lc] {
+    background-color: #0097a7;
+    border-color: #0097a7;
+}
+
+.btn-danger[b-sn8i44x6lc] {
+    background-color: #ff5252; /* Rojo moderno */
+    border-color: #ff5252;
+    color: white;
+}
+
+.btn-danger:hover[b-sn8i44x6lc] {
+    background-color: #ff1744;
+    border-color: #ff1744;
+}
+
+.btn-success[b-sn8i44x6lc] {
+    background-color: #4caf50; /* Verde moderno */
+    border-color: #4caf50;
+    color: white;
+}
+
+.btn-success:hover[b-sn8i44x6lc] {
+    background-color: #388e3c;
+    border-color: #388e3c;
+}
+
+.table tbody td:first-child[b-sn8i44x6lc] {
+    border-top-left-radius: 10px; /* Bordes redondeados en primeras y últimas celdas */
+    border-bottom-left-radius: 10px;
+}
+
+.table tbody td:last-child[b-sn8i44x6lc] {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}

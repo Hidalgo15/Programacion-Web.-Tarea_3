@@ -1,0 +1,122 @@
+﻿@page "/"
+
+@inject NavigationManager NavMan
+@inject IJSRuntime JSx
+@rendermode InteractiveServer
+@using System.Text.Json;
+
+<PageTitle>Vista General</PageTitle>
+
+
+<div class="dashboard">
+    <h3><strong>General</strong></h3>
+   
+
+    <div class="card-container">
+
+         <div class="card">
+            <h2><strong>Cantidad de Casos Registrados</strong></h2>
+            <p>@Registros.Count</p>
+        </div>
+
+        <div class="card">
+            <h2><strong>Total de Vehículos Involucrados</strong></h2>
+            <p>@Registros.Sum(r => r.VehiculosInvolucrados)</p>
+        </div>
+
+        <div class="card">
+            <h2><strong>Total de Muertos</strong></h2>
+            <p>@Registros.Sum(r => r.Muertos)</p>
+        </div>
+
+        <div class="card">
+            <h2><strong>Total de Heridos</strong></h2>
+            <p>@Registros.Sum(r => r.Heridos)</p>
+        </div>
+
+        <div class="card" >
+            <h2><strong>Total de Costos</strong></h2>
+            <p><Costos Valor="@Registros.Sum(r => r.CostoEstimado)"/></p>
+        </div>
+    </div>
+
+<div class="chart-container">
+    <div>
+        <canvas id="myChart" width="1" height="1"></canvas> <!-- Gráfica de Barras -->
+    </div>
+    <div>
+        <canvas id="myDoughnutChart" width="1" height="1"></canvas> <!-- Gráfica Doughnut -->
+    </div>
+</div>
+    
+</div>
+
+
+
+
+@code{
+
+private List<Reporte> Registros = new List<Reporte>();
+
+private int CasosTotal;
+private int MuertosTotal;
+private int HeridosTotal;
+private int VehiculosTotal;
+
+
+ protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var RegistrosJson = await JSx.InvokeAsync<string>("localStorage.getItem", "Registros");
+
+            if (RegistrosJson != null)
+            {
+                Registros = JsonSerializer.Deserialize<List<Reporte>>(RegistrosJson);
+                UpdateTotals();
+                
+                // Datos para la gráfica de barras
+                var chartData = GetChartData();
+                await JSx.InvokeVoidAsync("Graficar", chartData);
+
+                
+                StateHasChanged();
+            }
+        }
+    }
+
+    private void UpdateTotals()
+    {
+        CasosTotal = Registros.Count;
+        MuertosTotal = Registros.Sum(r => r.Muertos);
+        HeridosTotal = Registros.Sum(r => r.Heridos);
+        VehiculosTotal = Registros.Sum(r => r.VehiculosInvolucrados);
+    }
+
+
+    public class Accidente
+{
+    public DateTime Fecha { get; set; }
+    public int Id { get; set; }
+    // Otras propiedades...
+}
+
+// ...
+
+private object GetChartData()
+{
+    // Supongamos que 'registros' es tu lista de objetos Accidente
+    var accidentesPorFecha = Registros
+        .GroupBy(a => a.Fecha)
+        .Select(g => new { Fecha = g.Key, Cantidad = g.Count() })
+        .OrderByDescending(g => g.Cantidad)
+        .Take(5)
+        .ToList();
+
+    return new
+    {
+        labels = accidentesPorFecha.Select(x => x.Fecha.ToString("yyyy-MM-dd")).ToArray(),
+        data = accidentesPorFecha.Select(x => x.Cantidad).ToArray()
+    };
+}
+}

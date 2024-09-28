@@ -1,0 +1,94 @@
+@page "/Registro"
+@rendermode InteractiveServer
+@inject NavigationManager NavMan
+@using System.Text.Json;
+@inject IJSRuntime JSx
+
+<h3>Historial de accidentes</h3>
+
+<div class="text-end mb-3">
+    <button class="btn btn-secondary" @onclick="Nuevo_Registro">Nuevo Registro <i class="fa-solid fa-plus"></i></button>
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Ubicacion</th>
+            
+            <th>Muertos</th>
+            <th>Heridos</th>
+           
+            <th>Acciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var Registro in Registros)
+        {
+            <tr>
+                <td>@Registro.Fecha</td>
+                <td>@Registro.Ubicacion</td>
+                <td>@Registro.Muertos</td>
+                <td>@Registro.Heridos</td>
+                
+               
+                <td>
+                    <button @onclick="()=>EditarFila(Registro)" class="btn btn-primary btn-sm">Editar <i class="fa-regular fa-pen-to-square"></i></button>
+                    <button @onclick="()=>EliminarFila(Registro)" class="btn btn-danger btn-sm">Eliminar <i class="fa-solid fa-trash"></i></button>
+                    <button @onclick="()=>ImprimirX(Registro)" class="btn btn-success btn-sm ">Imprimir <i class="fa-solid fa-print"></i></button>
+                    <button @onclick="()=>VerDetalles(Registro)"class="btn btn-info btn-sm">Ver Detalles <i class="fa-solid fa-circle-info"></i></button>
+
+                </td>
+                
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@code{
+
+    List<Reporte> Registros = new List<Reporte>();
+    private void Nuevo_Registro(){
+        NavMan.NavigateTo("Registro/Nuevo");
+    }
+
+    private void EditarFila(Reporte Registro){
+        NavMan.NavigateTo("Registro/Editar/" + Registro.Id);
+    }
+
+    private async Task EliminarFila(Reporte Registro){
+        var rs = await JSx.InvokeAsync<bool>("confirm", "¿Seguro que quieres eliminar este registro?");
+        if(rs){
+            Registros.Remove(Registro);
+            await JSx.InvokeVoidAsync("localStorage.setItem", "Registros", JsonSerializer.Serialize(Registros));
+            StateHasChanged();
+        }
+    }
+
+    private void ImprimirX(Reporte Registro){
+         NavMan.NavigateTo("Registro/Imprimir/{Id}" + Registro.Id);
+    }
+
+ private void VerDetalles(Reporte Registro){
+     NavMan.NavigateTo("Registro/VerDetalle/{Id}" + Registro.Id);
+ }
+
+
+    protected override async Task OnAfterRenderAsync(bool firstRender){
+        if(firstRender)
+        {
+            var RegistrosJson = await JSx.InvokeAsync<string>("localStorage.getItem", "Registros");
+
+
+            if(RegistrosJson != null)
+            {
+                Registros = JsonSerializer.Deserialize<List<Reporte>>(RegistrosJson);
+                StateHasChanged();
+            }
+                
+        }
+    }
+}  

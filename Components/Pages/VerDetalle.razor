@@ -1,0 +1,106 @@
+@page "/Registro/VerDetalle/{Id}"
+@inject NavigationManager NavMan
+@inject IJSRuntime JSx
+@rendermode InteractiveServer
+@using System.Text.Json;
+
+<h3>Detalles del Accidente</h3>
+
+
+<EditForm Model="@Registro" OnValidSubmit="GuardarReporte">
+    <DataAnnotationsValidator />
+
+    <div>
+        <label for="Fecha" class="form-label">Fecha:</label>
+        <InputDate id="Fecha" @bind-Value="Registro.Fecha" disabled class="form-control" />
+    </div>
+
+   
+     <div>
+        <label for="ubicacion" class="form-label">Ubicacion (Campo obligatorio):</label>
+        <InputText id="ubicacion" @bind-Value="Registro.Ubicacion" diabled class="form-control" />
+      
+    </div>
+
+    <div>
+        <label for="descripcion" class="form-label">Descripción (Campo obligatorio):</label>
+        <label id="descripcion" Value="@Registro.Descripcion" class="form-control" />
+       
+    </div>
+
+    <div>
+        <label for="CostoEstimado">Costo Estimado:</label>
+        <label id="CostoEstimado" Value="@Registro.CostoEstimado" class="form-control" />
+    </div>
+
+    <div>
+        <label for="muertos">Muertos:</label>
+        <label id="muertos" Value="@Registro.Muertos" class="form-control" />
+    </div>
+
+    <div>
+        <label for="heridos">Heridos:</label>
+        <label id="heridos" Value="@Registro.Heridos" class="form-control" />
+    </div>
+
+    <div>
+        <label for="vehiculosInvolucrados">Vehículos Involucrados:</label>
+        <label id="vehiculosInvolucrados" Value="@Registro.VehiculosInvolucrados" class="form-control" />
+    </div>
+
+    <div class="mt-3">
+        
+        <button type="button" class="btn btn-danger" @onclick="Regresar">Regresar</button>
+    </div>
+</EditForm>
+
+
+
+@code {
+
+    [Parameter]
+    public string? Id {get; set;} = null;
+    private Reporte Registro = new Reporte();
+    List<Reporte> Registros = new List<Reporte>();
+
+    private void GuardarReporte()
+    {
+        if(string.IsNullOrEmpty(Registro.Id)){
+             Registros.Add(Registro);
+             Registro.Id = Guid.NewGuid().ToString();
+
+        }else{
+            var index = Registros.FindIndex(x => x.Id == Registro.Id);
+            Registros[index] = Registro;
+        }
+        JSx.InvokeVoidAsync("localStorage.setItem", "Registros", JsonSerializer.Serialize(Registros));
+        NavMan.NavigateTo("Registro");
+    }
+
+    
+
+    private void Regresar()
+    {
+        NavMan.NavigateTo("Registro");
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender){
+        if(firstRender)
+        {
+            var RegistrosJson = await JSx.InvokeAsync<string>("localStorage.getItem", "Registros");
+            if(RegistrosJson != null)
+            {
+                Registros = JsonSerializer.Deserialize<List<Reporte>>(RegistrosJson);
+
+                if(Id != null){
+                    Registro = Registros.FirstOrDefault(r => r.Id == Id)?? new Reporte();
+                }
+                StateHasChanged();
+            }
+        }
+    }
+
+
+    
+}
+

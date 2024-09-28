@@ -1,0 +1,394 @@
+/* _content/Tarea_3/Components/Layout/MainLayout.razor.rz.scp.css */
+body[b-jbrw2m1jni] {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+}
+
+.content[b-jbrw2m1jni]{
+    padding: 20px;
+}
+
+/* Estilo para el Navbar */
+.navbar[b-jbrw2m1jni] {
+    background-color: #2f2fe7; /* Fondo oscuro del Navbar */
+    padding: 1rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-item[b-jbrw2m1jni] {
+    margin-left: 1rem;
+}
+
+.nav-link[b-jbrw2m1jni] {
+    color: #5580ed;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    text-transform: capitalize;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover[b-jbrw2m1jni] {
+    color: #ffc107; /* Color amarillo claro al pasar el mouse */
+    transform: scale(1.05); /* Efecto de aumento en el texto */
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5); /* Efecto de brillo suave */
+}
+
+/* Estilos para el main */
+main[b-jbrw2m1jni] {
+    background-color: #ffffff; /* Fondo blanco para el contenido principal */
+    color: #343a40; /* Color de texto oscuro para combinar con el nav */
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem auto;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+}
+
+/* Añadir un borde suave entre main y navbar */
+main[b-jbrw2m1jni]::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0.3rem;
+    background-color: #ffc107; /* Amarillo claro, igual que el hover de los links */
+    margin-bottom: 1.5rem;
+}
+
+/* Estilos de encabezado dentro del main */
+main h1[b-jbrw2m1jni], main h2[b-jbrw2m1jni], main h3[b-jbrw2m1jni] {
+    color: #343a40;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+main p[b-jbrw2m1jni] {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #6c757d;
+}
+
+/* Botones dentro del main */
+main .btn[b-jbrw2m1jni] {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+main .btn:hover[b-jbrw2m1jni] {
+    background-color: #ffc107;
+    color: #343a40;
+}
+
+/* Responsive Design */
+@media (max-width: 991.98px) {
+    .navbar-toggler[b-jbrw2m1jni] {
+        background-color: #495057;
+        color: white;
+        border: none;
+    }
+
+    .navbar-collapse[b-jbrw2m1jni] {
+        background-color: #343a40;
+    }
+
+    main[b-jbrw2m1jni] {
+        padding: 1.5rem;
+        margin: 1rem auto;
+    }
+}
+
+/* Container */
+.container-fluid[b-jbrw2m1jni] {
+    max-width: 100px;
+    margin: auto;
+}
+/* _content/Tarea_3/Components/Layout/NavMenu.razor.rz.scp.css */
+body[b-vhqh8bp6gf] {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e4a9a9;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar[b-vhqh8bp6gf] {
+    background-color: #8fabf1;
+    padding: 1rem;
+    box-shadow: 0px 4px 8px rgba(52, 46, 141, 0.1);
+}
+
+.nav-item[b-vhqh8bp6gf] {
+    margin-left: 1rem;
+}
+
+.nav-link[b-vhqh8bp6gf] {
+    color: #484dd9;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    text-transform: capitalize;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover[b-vhqh8bp6gf] {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del texto */
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5); /* Añade un leve brillo */
+}
+
+
+@media (max-width: 991.98px) {
+    .navbar-toggler[b-vhqh8bp6gf] {
+        background-color: #495057;
+        color: white;
+        border: none;
+    }
+
+    .navbar-toggler-icon[b-vhqh8bp6gf] {
+        background-image: url('data:image/svg+xml;base64,...'); /* Icono personalizado */
+    }
+
+    .navbar-collapse[b-vhqh8bp6gf] {
+        background-color: #343a40;
+    }
+}
+
+.container-fluid[b-vhqh8bp6gf] {
+    max-width: 1200px;
+    margin: auto;
+}
+/* _content/Tarea_3/Components/Pages/AcercaDe.razor.rz.scp.css */
+.text-center[b-tmde2avz52] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espacio entre los botones */
+}
+
+.btn i[b-tmde2avz52] {
+    margin-right: 8px;
+}
+
+.botonTelegram[b-tmde2avz52] {
+    background-color: lightblue;
+  
+}
+
+.botonWhatsapp[b-tmde2avz52] {
+    background-color: lightgreen;
+}
+
+.img-top-right[b-tmde2avz52] {
+    position: absolute;
+    top: 35px;
+    right: 250px; /* Ajusta este valor para controlar la distancia desde la derecha */
+    width: 150px;
+    margin-top: 210px;
+}
+/* _content/Tarea_3/Components/Pages/Home.razor.rz.scp.css */
+.dashboard[b-737q8lpcob] {
+
+    padding: 20px;
+    background-color: #f4f7f9; /* Color de fondo claro */
+    border-radius: 1px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex; 
+    justify-content: space-between;
+}
+
+.card-container[b-737q8lpcob] {
+    margin-left: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual ancho */
+    gap: 20px;
+    flex-grow: 1;
+  }
+  
+  .card[b-737q8lpcob] {
+    
+    background-color: rgb(254, 254, 254);
+    padding: 3px;
+    font-size: 0.9em;
+    border-radius: 10px;
+    box-shadow: 0 1px 5px rgba(135, 135, 135, 0.129);
+    transition: transform 0.5s;
+    
+
+
+  }
+
+
+
+.card h2[b-737q8lpcob] {
+    margin-left:5px ;
+    margin-top: 5px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.card p[b-737q8lpcob] {
+    
+    font-size: 1.2em;
+    margin-top: 10px;
+    margin-left: 5px;
+    color: #2e77c0; 
+}
+
+
+
+.card:hover[b-737q8lpcob] {
+    transform: scale(1.0025); /* Efecto de hover */
+}
+
+
+.chart-container[b-737q8lpcob] {
+    margin-right:25px ;
+    display: flex; /* Usar flexbox para alinear las gráficas */
+    justify-content: space-between;
+    width: 50%;
+}
+
+#myChart[b-737q8lpcob], #myDoughnutChart[b-737q8lpcob] {
+    width: 500px;  /* Ajusta el ancho aquí */
+    height: 175px; /* Ajusta la altura aquí */
+}
+/* _content/Tarea_3/Components/Pages/Registro.razor.rz.scp.css */
+body[b-sn8i44x6lc] {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+h3[b-sn8i44x6lc] {
+    color: #4a4a4a;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+
+form[b-sn8i44x6lc] {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-label[b-sn8i44x6lc] {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+    color: #5a5a5a;
+}
+
+.form-control[b-sn8i44x6lc] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.form-control:focus[b-sn8i44x6lc] {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+
+div[b-sn8i44x6lc] {
+    margin-bottom: 20px;
+}
+
+.table[b-sn8i44x6lc] {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px; /* Espacio entre filas */
+    background-color: white;
+}
+
+.table th[b-sn8i44x6lc], .table td[b-sn8i44x6lc] {
+    padding: 12px 15px;
+    background-color: #f7f7f7; /* Fondo claro */
+    color: #333; /* Texto oscuro */
+    border-bottom: 2px solid #e0e0e0; /* Línea de separación sutil */
+}
+
+.table th[b-sn8i44x6lc] {
+    background-color: #fafafa; /* Fondo muy claro para encabezado */
+    text-align: left;
+    font-weight: bold;
+    color: #666; /* Texto más suave */
+    text-transform: uppercase; /* Mayúsculas para un toque más elegante */
+    font-size: 0.9rem; /* Tamaño de fuente reducido */
+}
+
+.table tbody tr[b-sn8i44x6lc] {
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.table tbody tr:hover[b-sn8i44x6lc] {
+    background-color: #eaf3f3; /* Suave cambio de color al hacer hover */
+    transform: translateY(-2px); /* Elevación ligera */
+}
+
+.btn[b-sn8i44x6lc] {
+    border-radius: 5px; /* Botones redondeados */
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn:hover[b-sn8i44x6lc] {
+    transform: translateY(-2px); /* Elevación ligera al hacer hover */
+}
+
+.btn-primary[b-sn8i44x6lc] {
+    background-color: #00bcd4; /* Azul cian tecnológico */
+    border-color: #00bcd4;
+    color: white;
+}
+
+.btn-primary:hover[b-sn8i44x6lc] {
+    background-color: #0097a7;
+    border-color: #0097a7;
+}
+
+.btn-danger[b-sn8i44x6lc] {
+    background-color: #ff5252; /* Rojo moderno */
+    border-color: #ff5252;
+    color: white;
+}
+
+.btn-danger:hover[b-sn8i44x6lc] {
+    background-color: #ff1744;
+    border-color: #ff1744;
+}
+
+.btn-success[b-sn8i44x6lc] {
+    background-color: #4caf50; /* Verde moderno */
+    border-color: #4caf50;
+    color: white;
+}
+
+.btn-success:hover[b-sn8i44x6lc] {
+    background-color: #388e3c;
+    border-color: #388e3c;
+}
+
+.table tbody td:first-child[b-sn8i44x6lc] {
+    border-top-left-radius: 10px; /* Bordes redondeados en primeras y últimas celdas */
+    border-bottom-left-radius: 10px;
+}
+
+.table tbody td:last-child[b-sn8i44x6lc] {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+/* _content/Tarea_3/Components/Pages/RegistroEditar.razor.rz.scp.css */
